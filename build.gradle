@@ -1,0 +1,32 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.github.vladislavsevruk:recursive-assertion-assertj:1.0.1'
+    testImplementation(
+            "com.codeborne:selenide:6.1.1",
+            'com.codeborne:selenide:6.2.1',
+            'com.github.javafaker:javafaker:1.0.2',
+            "org.junit.jupiter:junit-jupiter-api:5.8.2",
+            "org.assertj:assertj-core:3.19.0",
+            "com.fasterxml.jackson.core:jackson-databind:2.10.3")
+    testRuntimeOnly(
+            "org.slf4j:slf4j-simple:1.7.29",
+            "org.junit.jupiter:junit-jupiter-engine:5.8.2")
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+
+test {
+    useJUnitPlatform()
+}
