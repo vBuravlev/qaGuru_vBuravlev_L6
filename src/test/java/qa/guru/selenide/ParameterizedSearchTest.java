@@ -1,4 +1,4 @@
-package qa.guru;
+package qa.guru.selenide;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;

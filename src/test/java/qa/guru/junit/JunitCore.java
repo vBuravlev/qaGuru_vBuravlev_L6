@@ -1,11 +1,11 @@
-package qa.guru;
+package qa.guru.junit;
 
 import org.junit.jupiter.api.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class JavaCore {
+public class JunitCore {
 
     public static void main(String[] args) throws Exception {
         // lookup classes with annotation @Test
