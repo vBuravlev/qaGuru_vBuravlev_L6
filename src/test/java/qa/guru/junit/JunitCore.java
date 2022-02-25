@@ -8,11 +8,8 @@ import java.lang.reflect.Method;
 public class JunitCore {
 
     public static void main(String[] args) throws Exception {
-        // lookup classes with annotation @Test
-        // here we go with class SimpleTest.class
 
         Class clazz = SimpleTest.class;
-
 
         for (Method methodBeforeAll : clazz.getDeclaredMethods()) {
             BeforeAll methodAnnotationBeforeAll = methodBeforeAll.getAnnotation(BeforeAll.class);
@@ -36,7 +33,6 @@ public class JunitCore {
         }
 
 
-        // run all methods with @Test
         for (Method methodTest : clazz.getDeclaredMethods()) {
             Test methodAnnotationTest = methodTest.getAnnotation(Test.class);
             if (methodAnnotationTest != null) {
