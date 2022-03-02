@@ -13,5 +13,10 @@ public class CommitGit {
     void commitTwo () {
         System.out.println("new Commit Two");
     }
-    
+
+    @Test
+    void commitTree () {
+        System.out.println("new Commit Tree");
+    }
+
 }
