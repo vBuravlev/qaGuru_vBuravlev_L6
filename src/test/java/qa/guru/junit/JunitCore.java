@@ -81,6 +81,8 @@ public class JunitCore {
         }
     }
 
+
+
     private static void extracted1(Class clazz) throws IllegalAccessException, InstantiationException, NoSuchMethodException {
         for (Method methodBeforeEach : clazz.getDeclaredMethods()) {
             BeforeEach methodAnnotationBeforeEach = methodBeforeEach.getAnnotation(BeforeEach.class);
@@ -89,7 +91,6 @@ public class JunitCore {
                     methodBeforeEach.invoke(clazz.getConstructor().newInstance());
                     System.out.println("Test passed: " + methodBeforeEach.getName());
                     System.out.println();
-                    continue;
                 } catch (InvocationTargetException e) {
                     if (e.getCause() instanceof AssertionError) {
                         System.out.println("Test failed: " + methodBeforeEach.getName());
@@ -114,7 +115,6 @@ public class JunitCore {
                     methodAfterEach.invoke(clazz.getConstructor().newInstance());
                     System.out.println("Test passed: " + methodAfterEach.getName());
                     System.out.println();
-                    continue;
                 } catch (InvocationTargetException e) {
                     if (e.getCause() instanceof AssertionError) {
                         System.out.println("Test failed: " + methodAfterEach.getName());
@@ -130,5 +130,6 @@ public class JunitCore {
             }
         }
     }
+
 }
 
